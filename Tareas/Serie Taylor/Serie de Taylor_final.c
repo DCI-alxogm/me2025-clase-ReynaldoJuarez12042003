@@ -158,9 +158,7 @@ int main() {
                 case 4: valoractual=log10(xi); break;
                 case 5: valoractual=cos(xi); break;
             }
-            printf("Valor aproximado (n=0): %f\n", valoractual);
-            Ea=fabs(valorverdadero-valoractual);
-            printf("Error absoluto: %f\n", Ea);
+           
         } else {
             valoractual=0;
             /*ciclo for para aplicar la iteracion de Tylor, depues de n=0 se usa un incremento
@@ -168,7 +166,11 @@ int main() {
             float residuo=0;
             for (int k=0; k<=n; k++) {
                 valoranterior=valoractual;
+                
                 valoractual+=(funcionseleccionada[k]*pow(h,k))/factorial(k);
+                Ea=fabs(valorverdadero-valoractual);
+
+                
 
                 /*Calculo de residuo solo para n de 0 a 5 ya que para n>5 se ocupa septima derivada*/
                 if (k>=0 && k<=5) {
@@ -187,7 +189,11 @@ int main() {
                     residuo=0;
                 }
 
-                printf("n= %d: Valor aproximado = %f, Rn= %f\n", k, valoractual, residuo);
+                printf("n= %d:, Valor aproximado = %f, Ea=%f, Rn= %f\n", k, valoractual, Ea, residuo);
+                if(Ea<Es){
+                  printf("El error deseado se alcanzo en la iteracion n=%d\n", k);
+                  break;
+                }
             }
         }
 
