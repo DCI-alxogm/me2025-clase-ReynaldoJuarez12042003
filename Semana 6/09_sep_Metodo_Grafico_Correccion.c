@@ -1,5 +1,5 @@
-/*Reynaldo Hassan Juarez Aranda*/
-
+/*Reynaldo Hassan Juarez Aranda 09/sep/2025
+Metodo grafico bisección*/
 
 #include <stdio.h>
 #include <math.h>
@@ -7,7 +7,7 @@
 float f(float c);
 
 int main(){
-    float Err_max=1e-6;
+    float Err_max=0.01;
     float a=4,b=20,Err,kold,k;
 
     kold=a;
