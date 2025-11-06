@@ -22,7 +22,7 @@ int main(){
   double x0,y0,dx,dy;
   int iter=1;
 
-  printf("=== METODO DEL GRADIENTE ===\n");
+  printf("Metodo gradiente\n");
 
   while(1){
     //Calculo de derivadas parciales
