@@ -1,1 +1,1 @@
-
+RK4 es más preciso que RK2, por lo que puede usar pasos grandes sin perder exactitud. RK2 acumula más error en cada paso, así que necesita usar un paso de tiempo más pequeño para lograr la misma precisión. Por eso, para obtener el mismo resultado que RK4 con un paso de 0.1, el método RK2 debe usar un paso alrededor de 0.01 y por lo tanto muchas mas iteraciones. 
